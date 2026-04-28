@@ -467,7 +467,7 @@ def _extract_line_item(
             "TOTAL_CURRENT_LIABILITIES", "TOTAL_CURRENT_LIAB", "CURRENT_LIAB",
         ),
         "cash_and_equivalents": lambda: _pick(bal,
-            "MONETARYARYFUNDS", "CASH_EQUIVALENTS", "MONEY_FUND", "CURRENCY_FUND",
+            "MONETARYARYFUNDS", "MONETARY_FUNDS", "CASH_EQUIVALENTS", "MONEY_FUND", "CURRENCY_FUND",
         ),
         "total_debt": lambda: _compute_total_debt(bal),
         "working_capital": lambda: _compute_working_capital(bal),
@@ -549,7 +549,6 @@ def _compute_capex(cf: "pd.Series | None") -> float | None:
         "FIX_INTAN_OTHER_ASSET_ACQUI",
         "CONSTRUCT_LONG_ASSET",
         "BUY_FIXED_ASSETS",
-        "BUY_FILOGICAL_ASSET",
     )
     return abs(v) if v is not None else None
 
